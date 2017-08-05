@@ -6,40 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfd17058-32c0-4f94-a706-9d4669eb7bd9" name="Default" comment="dao done">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gm/web/SeckillController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gm/dto/SeckillExecution.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gm/dto/SeckillResult.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gm/enums/SeckillStatEnum.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gm/exception/SeckillCloseException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gm/exception/SeckillException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gm/service/SeckillService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gm/service/impl/SeckillServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gm/web/SeckillController.class" afterPath="" />
+    <list default="true" id="cfd17058-32c0-4f94-a706-9d4669eb7bd9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gm/dto/Exposer.class" afterPath="$PROJECT_DIR$/target/classes/com/gm/dto/Exposer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/gm/exception/RepeatKillException.class" afterPath="$PROJECT_DIR$/target/classes/com/gm/exception/RepeatKillException.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/gm/service/ProductServiceTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/gm/service/ProductServiceTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gm/dto/Exposer.java" afterPath="$PROJECT_DIR$/src/main/java/com/gm/dto/Exposer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gm/exception/RepeatKillException.java" afterPath="$PROJECT_DIR$/src/main/java/com/gm/exception/RepeatKillException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-service.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-service.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/gm/service/ProductServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/gm/service/ProductServiceTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapper/ProductDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/ProductDao.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/spring/spring-service.xml" afterPath="$PROJECT_DIR$/target/classes/spring/spring-service.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/spring/spring-web.xml" afterPath="$PROJECT_DIR$/target/classes/spring/spring-web.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gm/dto/SeckillExecution.java" afterPath="$PROJECT_DIR$/src/main/java/com/gm/dto/KillRecord.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gm/dto/SeckillResult.java" afterPath="$PROJECT_DIR$/src/main/java/com/gm/dto/Result.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gm/enums/SeckillStatEnum.java" afterPath="$PROJECT_DIR$/src/main/java/com/gm/enums/StateEnum.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gm/exception/SeckillCloseException.java" afterPath="$PROJECT_DIR$/src/main/java/com/gm/exception/KillCloseException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gm/exception/SeckillException.java" afterPath="$PROJECT_DIR$/src/main/java/com/gm/exception/KillException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gm/service/SeckillService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gm/service/KillService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gm/service/impl/SeckillServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gm/service/impl/KillServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resource/script/seckill.js" afterPath="$PROJECT_DIR$/src/main/webapp/resource/script/product.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -905,7 +879,7 @@
       <updated>1501771762010</updated>
       <workItem from="1501771763444" duration="4920000" />
       <workItem from="1501893057846" duration="403000" />
-      <workItem from="1501893507868" duration="17797000" />
+      <workItem from="1501893507868" duration="18218000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1501851500467</created>
@@ -921,7 +895,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501853380761</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="dao done">
+      <created>1501921910783</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1501921910783</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -957,7 +938,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23120000" />
+    <option name="totallyTimeSpent" value="23541000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1384" height="786" extended-state="6" />
@@ -984,7 +965,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8996599" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9880952" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28582436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28582436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8027211" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
