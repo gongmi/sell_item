@@ -4,7 +4,7 @@
 <mapper namespace="com.gm.dao.ProductDao">
     <!--目的:为dao接口方法提供sql语句配置 即针对dao接口中的方法编写我们的sql语句-->
     <update id="reduceNumber">
-        UPDATE product
+        UPDATE secondkill.product
         SET number = number - 1
         WHERE product_id = #{productId}
               AND start_time <![CDATA[ <= ]]> #{killTime}
@@ -14,13 +14,13 @@
 
     <select id="queryById" resultType="Product">
         SELECT *
-        FROM product
+        FROM secondkill.product
         WHERE product_id = #{productId}
     </select>
 
     <select id="queryAll" resultType="Product">
         SELECT *
-        FROM product
+        FROM secondkill.product
         ORDER BY create_time DESC
     </select>
 

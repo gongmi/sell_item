@@ -17,8 +17,7 @@
     c:xml,json的默认读写支持-->
     <mvc:annotation-driven/>
 
-    <!--2.静态资源默认servlet配置-->
-    <!--
+    <!--2.静态资源默认servlet配置
         1).加入对静态资源处理：js,gif,png
         2).允许使用 "/" 做整体映射
     -->
@@ -32,5 +31,5 @@
     </bean>
 
     <!--4:扫描web相关的controller-->
-    <context:component-scan base-package="cn.codingxiaxw.web"/>
+    <context:component-scan base-package="com.gm.web"/>
 </beans>

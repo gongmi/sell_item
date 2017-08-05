@@ -74,7 +74,7 @@
     $(function () {
         //使用EL表达式传入参数
         product.detail.init({
-            seckillId:${product.seckillId},
+            productId:${product.productId},
             startTime:${product.startTime.time},//毫秒
             endTime:${product.endTime.time}
         });

@@ -1,47 +1,38 @@
 package com.gm.dto;
 
-import java.util.Date;
-
 /**
- * Created by codingBoy on 16/11/27.
  * 暴露秒杀地址(接口)DTO
  */
+//    用于service
 public class Exposer {
 
-    //是否开启秒杀
     private boolean exposed;
-
-    //加密措施
     private String md5;
-
-    private long seckillId;
-
-    //系统当前时间(毫秒)
+    private long productId;
     private long now;
-
-    //秒杀的开启时间
     private long start;
-
-    //秒杀的结束时间
     private long end;
 
-    public Exposer(boolean exposed, String md5, long seckillId) {
+    //秒杀开启的constructor
+    public Exposer(boolean exposed, String md5, long productId) {
         this.exposed = exposed;
         this.md5 = md5;
-        this.seckillId = seckillId;
+        this.productId = productId;
     }
 
-    public Exposer(boolean exposed, long seckillId,long now, long start, long end) {
+    //此product 秒杀未开启或者已结束的product的constructor
+    public Exposer(boolean exposed, long productId, long now, long start, long end) {
         this.exposed = exposed;
-        this.seckillId=seckillId;
+        this.productId = productId;
         this.now = now;
         this.start = start;
         this.end = end;
     }
 
-    public Exposer(boolean exposed, long seckillId) {
+    //找不到此id 的product的constructor
+    public Exposer(boolean exposed, long productId) {
         this.exposed = exposed;
-        this.seckillId = seckillId;
+        this.productId = productId;
     }
 
     public boolean isExposed() {
@@ -60,12 +51,12 @@ public class Exposer {
         this.md5 = md5;
     }
 
-    public long getSeckillId() {
-        return seckillId;
+    public long getProductId() {
+        return productId;
     }
 
-    public void setSeckillId(long seckillId) {
-        this.seckillId = seckillId;
+    public void setProductId(long productId) {
+        this.productId = productId;
     }
 
     public long getNow() {
@@ -97,7 +88,7 @@ public class Exposer {
         return "Exposer{" +
                 "exposed=" + exposed +
                 ", md5='" + md5 + '\'' +
-                ", seckillId=" + seckillId +
+                ", productId=" + productId +
                 ", now=" + now +
                 ", start=" + start +
                 ", end=" + end +

@@ -25,20 +25,20 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${list}" var="sk">
+                <c:forEach items="${products}" var="product">
                     <tr>
-                        <td>${sk.name}</td>
-                        <td>${sk.number}</td>
+                        <td>${product.name}</td>
+                        <td>${product.number}</td>
                         <td>
-                            <fmt:formatDate value="${sk.startTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+                            <fmt:formatDate value="${product.startTime}" pattern="yyyy-MM-dd HH:mm:ss" />
                         </td>
                         <td>
-                            <fmt:formatDate value="${sk.endTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+                            <fmt:formatDate value="${product.endTime}" pattern="yyyy-MM-dd HH:mm:ss" />
                         </td>
                         <td>
-                            <fmt:formatDate value="${sk.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+                            <fmt:formatDate value="${product.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
                         </td>
-                        <td><a class="btn btn-info" href="/product/${sk.seckillId}/detail" target="_blank">详情</a></td>
+                        <td><a class="btn btn-info" href="/product/${product.productId}/detail" target="_blank">详情</a></td>
                     </tr>
                 </c:forEach>
                 </tbody>
