@@ -10,7 +10,7 @@
 <div class="container">
     <div class="panel panel-default text-center">
         <div class="pannel-heading">
-            <h1>${seckill.name}</h1>
+            <h1>${product.name}</h1>
         </div>
 
         <div class="panel-body">
@@ -18,7 +18,7 @@
                 <%--显示time图标--%>
                 <span class="glyphicon glyphicon-time"></span>
                 <%--展示倒计时--%>
-                <span class="glyphicon" id="seckill-box"></span>
+                <span class="glyphicon" id="product-box"></span>
             </h2>
         </div>
     </div>
@@ -68,15 +68,15 @@
 <%--jQuery countDown倒计时插件--%>
 <script src="http://cdn.bootcss.com/jquery.countdown/2.1.0/jquery.countdown.min.js"></script>
 
-<script src="/resource/script/seckill.js" type="text/javascript"></script>
+<script src="/resource/script/product.js" type="text/javascript"></script>
 
 <script type="text/javascript">
     $(function () {
         //使用EL表达式传入参数
-        seckill.detail.init({
-            seckillId:${seckill.seckillId},
-            startTime:${seckill.startTime.time},//毫秒
-            endTime:${seckill.endTime.time}
+        product.detail.init({
+            seckillId:${product.seckillId},
+            startTime:${product.startTime.time},//毫秒
+            endTime:${product.endTime.time}
         });
     })
 </script>

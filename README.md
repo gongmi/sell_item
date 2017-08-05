@@ -1,12 +1,12 @@
 ## Java高并发秒杀系统API
 ## How to play
 
- 1. git clone `https://github.com/codingXiaxw/seckill.git`
+ 1. git clone `https://github.com/codingXiaxw/product.git`
  2. open IDEA -->  File  -->  New  --> Open 
- 3. choose seckill's pom.xml，open it
+ 3. choose product's pom.xml，open it
  4. update the `jdbc.properties` files about your mysql's username and password
  5. deploy the tomcat，and start up
- 6. enter in the browser: `http://localhost:8080/seckill/list`
+ 6. enter in the browser: `http://localhost:8080/product/list`
  7. enjoy it 
  
 
@@ -19,13 +19,13 @@ IDEA+Maven+SSM框架。
 
 用maven对项目进行管理的知识很简单，关于创建maven项目的知识大家看我的这篇文章便可以在几分钟内掌握:[Maven安装配置及创建你的第一个Maven项目](http://codingxiaxw.cn/2016/11/24/51-first-maven-project/)  
 
-秒杀系统搭建环境:IDEA+Maven+SSM框架。详情讲解[请点击这里](http://codingxiaxw.cn/2016/11/27/53-maven-ssm-seckill-dao/)或是下面模块的链接前往我的博客观看。  
+秒杀系统搭建环境:IDEA+Maven+SSM框架。详情讲解[请点击这里](http://codingxiaxw.cn/2016/11/27/53-maven-ssm-product-dao/)或是下面模块的链接前往我的博客观看。  
 
 完成这个秒杀系统，需要完成四个模块的代码编写，分别是:  
 
-- 1.[Java高并发秒杀APi之业务分析与DAO层代码编写](http://codingxiaxw.cn/2016/11/27/53-maven-ssm-seckill-dao/)。
-- 2.[Java高并发秒杀APi之Service层代码编写](http://codingxiaxw.cn/2016/11/28/54-seckill-service/)。
-- 3.[Java高并发秒杀APi之Web层代码编写](http://codingxiaxw.cn/2016/11/28/55-seckill-web/)。
+- 1.[Java高并发秒杀APi之业务分析与DAO层代码编写](http://codingxiaxw.cn/2016/11/27/53-maven-ssm-product-dao/)。
+- 2.[Java高并发秒杀APi之Service层代码编写](http://codingxiaxw.cn/2016/11/28/54-product-service/)。
+- 3.[Java高并发秒杀APi之Web层代码编写](http://codingxiaxw.cn/2016/11/28/55-product-web/)。
 
 其实完成这三个模块就可以完成我们的秒杀系统了，但对于我们的秒杀系统中一件秒杀商品，在秒杀的时候肯定会有成千上万的用户参与进来，通过上述三个模块完成的系统无法解决这么多用户的高并发操作，所以我们还需要第四个模块:  
 
@@ -70,7 +70,7 @@ IDEA+Maven+SSM框架。
 在命令行中输入如下命令:  
 
 ```
-mvn archetype:generate -DgroupId=cn.codingxiaxw.seckill -DartifactId=seckill -Dpackage=cn.codingxiaxw.seckill -Dversion=1.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-webapp
+mvn archetype:generate -DgroupId=cn.codingxiaxw.product -DartifactId=product -Dpackage=cn.codingxiaxw.product -Dversion=1.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-webapp
 ```
 
 然后使用IDEA打开该项目，在IDEA中对项目按照Maven项目的标准骨架补全我们项目的相应文件包，最后的工程结构如下:  
@@ -98,11 +98,11 @@ main包下进行我们项目的代码编写及相关配置文件，test包下进
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>cn.codingxiaxw.seckill</groupId>
-  <artifactId>seckill</artifactId>
+  <groupId>cn.codingxiaxw.product</groupId>
+  <artifactId>product</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>seckill Maven Webapp</name>
+  <name>product Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -235,7 +235,7 @@ main包下进行我们项目的代码编写及相关配置文件，test包下进
   </dependencies>
 
   <build>
-    <finalName>seckill</finalName>
+    <finalName>product</finalName>
   </build>
 </project>
 ```
@@ -327,7 +327,7 @@ public class Seckill
 
     @Override
     public String toString() {
-        return "Seckill{" +
+        return Product +
                 "seckillId=" + seckillId +
                 ", name='" + name + '\'' +
                 ", number=" + number +
@@ -349,7 +349,7 @@ public class SuccessKilled
     private Date createTime;
 
     //多对一，因为一件商品在库存中有很多数量，对应的购买明细也有很多。
-    private Seckill seckill;
+    private Seckill product;
 
     public long getSeckillId() {
         return seckillId;
@@ -384,16 +384,16 @@ public class SuccessKilled
     }
 
     public Seckill getSeckill() {
-        return seckill;
+        return product;
     }
 
-    public void setSeckill(Seckill seckill) {
-        this.seckill = seckill;
+    public void setSeckill(Seckill product) {
+        this.product = product;
     }
 
     @Override
     public String toString() {
-        return "SuccessKilled{" +
+        return Order +
                 "seckillId=" + seckillId +
                 ", userPhone=" + userPhone +
                 ", state=" + state +
@@ -502,13 +502,13 @@ SeckillDao.xml:
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.codingxiaxw.dao.SeckillDao">
+<mapper namespace="SeckillDao">
     <!--目的:为dao接口方法提供sql语句配置
     即针对dao接口中的方法编写我们的sql语句-->
 
 
     <update id="reduceNumber">
-        UPDATE seckill
+        UPDATE product
         SET number = number-1
         WHERE seckill_id=#{seckillId}
         AND start_time <![CDATA[ <= ]]> #{killTime}
@@ -518,13 +518,13 @@ SeckillDao.xml:
 
     <select id="queryById" resultType="Seckill" parameterType="long">
         SELECT *
-        FROM seckill
+        FROM product
         WHERE seckill_id=#{seckillId}
     </select>
 
     <select id="queryAll" resultType="Seckill">
         SELECT *
-        FROM seckill
+        FROM product
         ORDER BY create_time DESC
         limit #{offset},#{limit}
     </select>
@@ -538,7 +538,7 @@ SuccessKilledDao.xml:
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.codingxiaxw.dao.SuccessKilledDao">
+<mapper namespace="SuccessKilledDao">
 
     <insert id="insertSuccessKilled">
         <!--当出现主键冲突时(即重复秒杀时)，会报错;不想让程序报错，加入ignore-->
@@ -556,14 +556,14 @@ SuccessKilledDao.xml:
             sk.user_phone,
             sk.create_time,
             sk.state,
-            s.seckill_id "seckill.seckill_id",
-            s.name "seckill.name",
-            s.number "seckill",
-            s.start_time "seckill.start_time",
-            s.end_time "seckill.end_time",
-            s.create_time "seckill.create_time"
+            s.seckill_id "product.seckill_id",
+            s.name "product.name",
+            s.number "product",
+            s.start_time "product.start_time",
+            s.end_time "product.end_time",
+            s.create_time "product.create_time"
         FROM success_killed sk
-        INNER JOIN seckill s ON sk.seckill_id=s.seckill_id
+        INNER JOIN product s ON sk.seckill_id=s.seckill_id
         WHERE sk.seckill_id=#{seckillId}
         AND sk.user_phone=#{userPhone}
     </select>
@@ -646,7 +646,7 @@ SuccessKilledDao.xml:
 需要我们在resources包下创建jdbc.properties用于配置数据库的连接信息，内容如下:
 ```properties
 driver=com.mysql.jdbc.Driver
-url=jdbc:mysql://localhost:3306/seckill?useUnicode=true&characterEncoding=utf-8
+url=jdbc:mysql://localhost:3306/product?useUnicode=true&characterEncoding=utf-8
 username=root
 password=xiaxunwu1996.
 ```
@@ -690,9 +690,9 @@ public class SeckillDaoTest {
     @Test
     public void queryById() throws Exception {
         long seckillId=1000;
-        Seckill seckill=seckillDao.queryById(seckillId);
-        System.out.println(seckill.getName());
-        System.out.println(seckill);
+        Seckill product=seckillDao.queryById(seckillId);
+        System.out.println(product.getName());
+        System.out.println(product);
     }
 }
 ```
@@ -702,10 +702,10 @@ public class SeckillDaoTest {
  @Test
     public void queryAll() throws Exception {
 
-        List<Seckill> seckills=seckillDao.queryAll(0,100);
-        for (Seckill seckill : seckills)
+        List<Seckill> products=seckillDao.queryAll(0,100);
+        for (Seckill product : products)
         {
-            System.out.println(seckill);
+            System.out.println(product);
         }
     }
 ```
@@ -790,9 +790,8 @@ public class SuccessKilledDaoTest {
     public void queryByIdWithSeckill() throws Exception 	{
         long seckillId=1000L;
         long userPhone=13476191877L;
-        SuccessKilled successKilled=successKilledDao.queryByIdWithSeckill(seckillId,userPhone);
-        System.out.println(successKilled);
-        System.out.println(successKilled.getSeckill());
+        SuccessKilled successKillorderledDao.queryByIdWithSeckill(seckillId,userPhone);
+        System.out.println(successKillorderSystem.out.println(successKillorder());
 
 
     }
@@ -800,7 +799,7 @@ public class SuccessKilledDaoTest {
 
 运行，成功查询出我们明细表中id为1000且手机号码为13476191877的用户信息，并将表中对应的信息映射到SuccessKilled对象和Seckill对象的属性中。  
 
-到此，我们成功完成了Dao层开发及测试，接下来我们将进行Service层的开发工作，请查看我的下篇文章[Java高并发秒杀API之Service层开发](http://codingxiaxw.cn/2016/11/28/54-seckill-service/)  
+到此，我们成功完成了Dao层开发及测试，接下来我们将进行Service层的开发工作，请查看我的下篇文章[Java高并发秒杀API之Service层开发](http://codingxiaxw.cn/2016/11/28/54-product-service/)  
 
 
 ## 3.联系

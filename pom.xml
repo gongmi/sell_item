@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>cn.codingxiaxw.seckill</groupId>
-  <artifactId>seckill</artifactId>
+  <groupId>com.gm.SecondKill</groupId>
+  <artifactId>SecondKill</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>seckill Maven Webapp</name>
+  <name>product Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -161,6 +161,6 @@
   </dependencies>
 
   <build>
-    <finalName>seckill</finalName>
+    <finalName>SecondKill</finalName>
   </build>
 </project>

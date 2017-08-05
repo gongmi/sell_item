@@ -1,0 +1,35 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gm.dao.OrderDao">
+    <!--order是mysql的关键字 所以要注意-->
+    <insert id="insertOrder">
+        <!--当出现主键冲突时(即重复秒杀时)，会报错;不想让程序报错，加入ignore-->
+        INSERT IGNORE INTO secondkill.order(product_id,user_phone,state)
+        VALUES (#{productId},#{userPhone},0)
+    </insert>
+
+    <select id="queryByProductId" resultType="Order">
+
+        <!--根据productId查询Order对象，并携带Product对象-->
+        <!--如何告诉mybatis把结果映射到Order属性同时映射到Product属性-->
+        <!--可以自由控制SQL语句-->
+
+        SELECT
+        o.product_id,
+        o.user_phone,
+        o.create_time,
+        o.state,
+        p.product_id "product.product_id",
+        p.name "product.name",
+        p.number "product.number",
+        p.start_time "product.start_time",
+        p.end_time "product.end_time",
+        p.create_time "product.create_time"
+        FROM secondkill.order o
+        INNER JOIN secondkill.product p ON o.product_id=p.product_id
+        WHERE o.product_id=#{productId} AND o.user_phone=#{userPhone}
+    </select>
+
+
+</mapper>
