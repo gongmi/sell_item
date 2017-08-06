@@ -76,7 +76,7 @@ var product = {
         }
     },
 
-    handlerSeckill: function (productId, node) {
+    kill: function (productId, node) {
         //获取秒杀地址,控制显示器,执行秒杀
         node.hide().html('<button class="btn btn-primary btn-lg" id="killBtn">开始秒杀</button>');
 
@@ -138,11 +138,11 @@ var product = {
                 //时间完成后回调事件
                 //获取秒杀地址,控制现实逻辑,执行秒杀
                 console.log('______fininsh.countdown');
-                product.handlerSeckill(productId, productBox);
+                product.kill(productId, productBox);
             });
         } else {
             //秒杀开始
-            product.handlerSeckill(productId, productBox);
+            product.kill(productId, productBox);
         }
     }
 

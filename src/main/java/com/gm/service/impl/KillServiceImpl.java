@@ -126,8 +126,8 @@ public class KillServiceImpl implements KillService {
 
     }
 
-
-    public KillRecord executeSeckillProcedure(long productId, long userPhone, String md5) {
+    //下面这个方法不用加事务 因为 存储过程保证了事务 所以不用抛出异常了
+    public KillRecord killByProcedure(long productId, long userPhone, String md5) {
         if (md5 == null || !md5.equals(getMD5(productId))) {
             return new KillRecord(productId, StateEnum.DATA_REWRITE);
         }
@@ -137,21 +137,14 @@ public class KillServiceImpl implements KillService {
         map.put("phone", userPhone);
         map.put("killTime", killTime);
         map.put("result", null);
-        try {
-            productDao.killByProcedure(map);
-            int result = MapUtils.getInteger(map, "result", -2);
-            if (result == 1) {
-                Order sk = orderDao.queryByProductId(productId, userPhone);
-                return new KillRecord(productId, StateEnum.SUCCESS, sk);
-            } else {
-                return new KillRecord(productId, StateEnum.stateOf(result));
-            }
-        } catch (Exception e) {
-            logger.error(e.getMessage(), e);
-            return new KillRecord(productId, StateEnum.INNER_ERROR);
+        productDao.killByProcedure(map);
+        int result = MapUtils.getInteger(map, "result", -2);
+        if (result == 1) {
+            Order order = orderDao.queryByProductId(productId, userPhone);
+            return new KillRecord(productId, StateEnum.SUCCESS, order);
         }
+        return new KillRecord(productId, StateEnum.stateOf(result));
     }
-
 }
 
 

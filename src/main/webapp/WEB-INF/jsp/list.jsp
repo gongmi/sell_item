@@ -16,7 +16,7 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>名称</th>
+                    <th>名称test</th>
                     <th>库存</th>
                     <th>开始时间</th>
                     <th>结束时间</th>

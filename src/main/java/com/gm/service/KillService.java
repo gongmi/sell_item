@@ -38,5 +38,5 @@ public interface KillService {
     /**
      * 执行秒杀操作by存储过程
      */
-    KillRecord executeSeckillProcedure(long productId, long userPhone, String md5);
+    KillRecord killByProcedure(long productId, long userPhone, String md5);
 }
